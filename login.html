@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login - Page</title>
+        <!-- Font auoseme -->
+        <link rel="stylesheet" href="css/vandors/font-awesome.min.css" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/vandors/bootstrap.min.css" />
+        <!-- Normailez -->
+        <link rel="stylesheet" href="css/vandors/normalize.css" />
+        <!-- Style Golobal -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Style Forms -->
+        <link rel="stylesheet" href="css/form.css" />
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <div class="container">
+                    <a class="navbar-brand logo" href="index.html">Shooping Cart</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse contentList" id="navbarSupportedContent">
+                        <!-- If User Not Login Show It -->
+                        <ul class="navbar-nav ml-auto" id="sign">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="login.html">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">Sign Up</a>
+                            </li>
+                        </ul>
+                        <!-- ./list For Login -->
+                    </div>
+                    <!-- ./collapse -->
+                </div>
+                <!-- ./container -->
+            </nav>
+        </header>
+        <!-- End Header -->
+
+        <div class="form text-center">
+            <form action="">
+                <h1 class="title-page">Sign In</h1>
+                <div class="box mb-3">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input class="border p-2 w-100" type="text" placeholder="User Name" id="userNameSginIn" />
+                </div>
+                <div class="box mb-3">
+                    <i class="fa fa-lock"></i>
+                    <input class="border p-2 w-100" type="password" placeholder="Password" id="userPassword" />
+                </div>
+                <input class="btn btn-md border p-2 w-100" type="submit" value="Sign In" id="btnSignIn" />
+            </form>
+        </div>
+
+        <!-- Jquery For Bootstrap -->
+        <script src="js/vandors/jquery-3.0.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/vandors/bootstrap.min.js"></script>
+        <!-- Loing Script -->
+        <script src="js/login.js"></script>
+    </body>
+</html>

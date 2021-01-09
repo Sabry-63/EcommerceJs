@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Update Product - Page</title>
+        <!-- Font auoseme -->
+        <link rel="stylesheet" href="css/vandors/font-awesome.min.css" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/vandors/bootstrap.min.css" />
+        <!-- Normailez -->
+        <link rel="stylesheet" href="css/vandors/normalize.css" />
+        <!-- Style Golobal -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Style Forms -->
+        <link rel="stylesheet" href="css/form.css" />
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand logo" href="index.html">Shooping Cart</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse contentList" id="navbarSupportedContent">
+                        <!-- If User Not Login Show It -->
+                        <ul class="navbar-nav ml-auto" id="sign">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="login.html">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">Sign Up</a>
+                            </li>
+                        </ul>
+                        <!-- ./list For Login -->
+                    </div>
+                    <!-- ./collapse -->
+                </div>
+                <!-- ./container -->
+            </nav>
+        </header>
+        <!-- End Header -->
+
+        <div class="text-center">
+            <div class="container">
+                <form action="">
+                    <h1 class="title-page">Update Product</h1>
+                    <div class="row">
+                        <div class="col-6">
+                            <img id="oldImg" class="w-100 mb-4" />
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input
+                                        id="productName"
+                                        class="border p-2 w-100 mb-3"
+                                        type="text"
+                                        placeholder="Product Name"
+                                    />
+                                </div>
+                                <div class="col-lg-6">
+                                    <input
+                                        id="productPrice"
+                                        class="border p-2 w-100 mb-3"
+                                        type="number"
+                                        placeholder="Product Price"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="col-lg-6">
+                                    <select id="productMeal" class="border p-2 w-100 mb-3">
+                                        <optgroup label="Meal">
+                                            <option value="" hidden>Select Meal</option>
+                                            <option value="Breakfast">Breakfast</option>
+                                            <option value="Lunch">Lunch</option>
+                                            <option value="Dinner">Dinner</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select id="productSize" class="border p-2 w-100 mb-3">
+                                        <optgroup label="Size">
+                                            <option value="" hidden>Select Size</option>
+                                            <option value="small">Small</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="large">Large</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <input
+                                        type="file"
+                                        class="border p-2 w-100 mb-3"
+                                        id="uploadImg"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <textarea
+                                id="decs"
+                                class="border p-2 w-100 mb-3"
+                                placeholder="Descrabtion...."
+                                rows="7"
+                                cols=""
+                            ></textarea>
+                        </div>
+                        <div class="col-12">
+                            <input
+                                class="btn btn-md border p-2 w-100"
+                                type="submit"
+                                value="Update Product"
+                                id="updateProduct"
+                            />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Jquery For Bootstrap -->
+        <script src="js/vandors/jquery-3.0.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/vandors/bootstrap.min.js"></script>
+        <!-- Loing Script -->
+        <script src="js/user_login.js"></script>
+        <!-- Create Product Script -->
+        <script src="js/update.js"></script>
+        <!-- Actions Script -->
+        <script src="js/actions.js"></script>
+    </body>
+</html>

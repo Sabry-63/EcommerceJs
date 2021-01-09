@@ -1,0 +1,56 @@
+.form form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px;
+}
+.form .box {
+    position: relative;
+    width: 100%;
+}
+.form .box i {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: var(--mainColor);
+}
+.form .box input {
+    transition: border-bottom 0.4s;
+    border-bottom: 2px solid transparent!important;
+
+    border-radius: 2px;
+}
+
+.form .box::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    width: 0%;
+    background-color: var(--mainColor);
+    transition: left 0.4s, width 0.4s;
+}
+
+.form .box:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+.form .box input:focus {
+    border-bottom: 2px solid var(--mainColor) !important;
+}
+
+input[type="submit"] {
+    background-color: var(--mainColor);
+    color: white;
+    border-radius: 2px;
+}
+
+input[type="submit"]:hover {
+    color: var(--mainColor);
+    background-color: white;
+    border: 1px solid var(--mainColor) !important;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Favories - Page</title>
+        <!-- Font auoseme -->
+        <link rel="stylesheet" href="css/vandors/font-awesome.min.css" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/vandors/bootstrap.min.css" />
+        <!-- Normailez -->
+        <link rel="stylesheet" href="css/vandors/normalize.css" />
+        <!-- Style Golobal -->
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand logo" href="index.html">Shooping Cart</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse contentList" id="navbarSupportedContent">
+                        <!-- If User Not Login Show It -->
+                        <ul class="navbar-nav ml-auto" id="sign">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="login.html">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">Sign Up</a>
+                            </li>
+                        </ul>
+                        <!-- ./list For Login -->
+                    </div>
+                    <!-- ./collapse -->
+                </div>
+                <!-- ./container -->
+            </nav>
+        </header>
+        <!-- End Header -->
+        <div class="favorites">
+            <div class="container">
+                <div class="products mt-5"></div>
+                <div class="noProducts"></div>
+            </div>
+        </div>
+        <!-- Jquery For Bootstrap -->
+        <script src="js/vandors/jquery-3.0.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/vandors/bootstrap.min.js"></script>
+        <!-- User  Script -->
+        <script src="js/user_login.js"></script>
+        <!-- Cart Script -->
+        <script src="js/favorites.js"></script>
+        <!-- Actions Script -->
+        <script src="js/actions.js"></script>
+    </body>
+</html>
