@@ -25,17 +25,24 @@ let insertProduct;
                     <div class="info text-md-left text-center">
                     <h3 class="h3 name mb-3">${item.name}</h3>
                     <p class="desc mb-3">${item.desc}</p>
-                        <b>The Meal Is : <i>${item.meal}</i></b><br>
-                        <b>The Size Is : <i>${item.size}</i></b>
-                        <div class="btns text-right mt-3">
-                            <button class="btn btn-md border fa fa-cart-plus" onclick="addToCart(${
-                                item.id
-                            })" id="addCart" title="Add To Card"></button>
-                            <button class="btn btn-md border fa fa-heart mx-2 ${
-                                item.loved === true ? "active" : ""
-                            }" onclick="addToFavorite(${item.id})" title="Add To Favorite"></button>
-                            <button class="btn btn-md border fa fa-list-alt" onclick="saveProductInformation(${index})"  title="Show Ditales"></button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <b>The Meal Is : <i>${item.meal}</i></b><br>
+                            <b>The Size Is : <i>${item.size}</i></b>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="btns text-center text-md-right mt-3">
+                                <button class="btn btn-md border fa fa-cart-plus" onclick="addToCart(${
+                                    item.id
+                                })" id="addCart" title="Add To Card"></button>
+                                <button class="btn btn-md border fa fa-heart mx-2 ${
+                                    item.loved === true ? "active" : ""
+                                }" onclick="addToFavorite(${item.id})" title="Add To Favorite"></button>
+                                <button class="btn btn-md border fa fa-list-alt" onclick="saveProductInformation(${index})"  title="Show Ditales"></button>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

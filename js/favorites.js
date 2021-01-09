@@ -25,7 +25,7 @@ function insertProduct(allProducts = []) {
                                     <b>The quantity Is : <i>${item.quantity}</i></b>
                                 </div>
                                 <div class="col-md-4">
-                                <div class="btns text-md-right mt-3">
+                                <div class="btns text-center text-md-right mt-3">
                                     <button class="btn btn-md border fa fa-trash mx-2" onclick="removeFormCart(${index},${item.id})" id="addCart"></button>
                                 </div>
                             </div>

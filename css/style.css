@@ -99,14 +99,16 @@ header .logo {
 }
 .user_list .parent_cart {
     position: relative;
+    width: 40px;
+    margin: auto;
 }
 .user_list .parent_cart .fa-cart-plus {
     cursor: pointer;
 }
 .user_list li .counter_cart {
     position: absolute;
-    right: -8px;
-    top: -4px;
+    right: -4px;
+    top: -8px;
     background-color: var(--mainColor);
     color: white;
     border-radius: 50%;
@@ -155,6 +157,7 @@ header .logo {
     top: -12px;
     width: 100px;
     height: 100px;
+    z-index: 2;
 }
 .products .product .img-product {
     width: 200px;

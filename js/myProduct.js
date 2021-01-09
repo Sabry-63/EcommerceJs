@@ -24,7 +24,7 @@ let insertProduct;
                     <p class="desc mb-3">${item.desc}</p>
                         <b>The Meal Is : <i>${item.meal}</i></b><br>
                         <b>The Size Is : <i>${item.size}</i></b>
-                        <div class="btns text-right mt-3">
+                        <div class="btns text-center text-md-right mt-3">
                             <button class="btn btn-md border fa fa-cart-plus" onclick="addToCart(${
                                 item.id
                             })" id="addCart" title="Add To Card"></button>
