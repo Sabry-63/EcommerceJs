@@ -33,12 +33,8 @@ let insertProduct;
 
                         <div class="col-md-6">
                             <div class="btns text-center text-md-right mt-3">
-                                <button class="btn btn-md border fa fa-cart-plus" onclick="addToCart(${
-                                    item.id
-                                })" id="addCart" title="Add To Card"></button>
-                                <button class="btn btn-md border fa fa-heart mx-2 ${
-                                    item.loved === true ? "active" : ""
-                                }" onclick="addToFavorite(${item.id})" title="Add To Favorite"></button>
+                                <button class="btn btn-md border fa fa-cart-plus" onclick="addToCart(${item.id})" id="addCart" title="Add To Card"></button>
+                                <button class="btn btn-md border fa fa-heart mx-2 ${item.loved === true ? "active" : ""}" onclick="addToFavorite(${item.id})" title="Add To Favorite"></button>
                                 <button class="btn btn-md border fa fa-list-alt" onclick="saveProductInformation(${index})"  title="Show Ditales"></button>
                             </div>
                         </div>
@@ -92,32 +88,37 @@ function searchByName(name, myList) {
 }
 
 // Add Prodects To Favorite Page
-allProductsFavorite = JSON.parse(localStorage.getItem("productsFavorite"))
-    ? JSON.parse(localStorage.getItem("productsFavorite"))
-    : [];
+allProductsFavorite = JSON.parse(localStorage.getItem("productsFavorite")) ? JSON.parse(localStorage.getItem("productsFavorite")) : [];
 
 function addToFavorite(id) {
-    // Select Items On Clicl
-    const selectItem = products.find((item) => item.id === id);
+    if (getUser === null) {
+        window.location = "register.html";
+        console.log("y");
+    } else {
+        console.log("n");
 
-    // Add Key To Elements
-    selectItem.loved = true;
+        // Select Items On Clicl
+        const selectItem = products.find((item) => item.id === id);
 
-    // Get All Products In Cart & Join In Array
-    allProductsFavorite = [...allProductsFavorite, selectItem];
+        // Add Key To Elements
+        selectItem.loved = true;
 
-    // Set In LocalStorage
-    let uniqueProducts = getUinque(allProductsFavorite, "id");
-    localStorage.setItem("productsFavorite", JSON.stringify(uniqueProducts));
+        // Get All Products In Cart & Join In Array
+        allProductsFavorite = [...allProductsFavorite, selectItem];
 
-    products.map((item) => {
-        if (item.id === selectItem.id) {
-            item.loved = true;
-        }
-    });
+        // Set In LocalStorage
+        let uniqueProducts = getUinque(allProductsFavorite, "id");
+        localStorage.setItem("productsFavorite", JSON.stringify(uniqueProducts));
 
-    localStorage.setItem("allProducts", JSON.stringify(products));
-    insertProduct(products);
+        products.map((item) => {
+            if (item.id === selectItem.id) {
+                item.loved = true;
+            }
+        });
+
+        localStorage.setItem("allProducts", JSON.stringify(products));
+        insertProduct(products);
+    }
 }
 
 // Filter By Size
