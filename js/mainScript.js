@@ -16,10 +16,10 @@ let insertProduct;
     // Loop In Products & Out Single Product
     let productUi = products
         .map((item, index) => {
-            return `<div class="product mb-4 d-flex">
+            return `<div class="product mb-4  d-flex">
             ${item.isMe === "Y" ? "<img src='images/products/new.png' class='create'>" : ""}
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 mb-md-0">
                     <img class='img-product w-100' src="${item.img}" alt="${item.name}" />
                 </div>
                 <div class="col-md-8">
