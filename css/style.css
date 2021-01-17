@@ -104,7 +104,6 @@ header .logo {
 }
 .user_list .parent_cart .fa-cart-plus {
     cursor: pointer;
-    padding: 0 200px;
 }
 .user_list li .counter_cart {
     position: absolute;
@@ -141,6 +140,11 @@ header .logo {
 
 .user_list .parent_cart .drobdown-cart li a {
     color: var(--mainColor);
+}
+@media (max-width: 676px) {
+    .user_list .parent_cart .fa-cart-plus {
+        padding: 0 200px;
+    }
 }
 /* 
     0- Home Start
