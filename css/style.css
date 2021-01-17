@@ -92,7 +92,7 @@ header .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10px;
+    margin: 10px;
 }
 .user_list li i {
     font-size: 1.6em;
@@ -104,6 +104,7 @@ header .logo {
 }
 .user_list .parent_cart .fa-cart-plus {
     cursor: pointer;
+    padding: 0 200px;
 }
 .user_list li .counter_cart {
     position: absolute;
