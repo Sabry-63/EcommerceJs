@@ -15,10 +15,10 @@ let insertProduct;
             return `<div class="product mb-4 d-flex">
             ${item.isMe === "Y" ? "<img src='images/products/new.png' class='create'>" : ""}
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <img class='img-product w-100' src="${item.img}" alt="${item.name}" />
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="info text-md-left text-center">
                     <h3 class="h3 name mb-3">${item.name}</h3>
                     <p class="desc mb-3">${item.desc}</p>

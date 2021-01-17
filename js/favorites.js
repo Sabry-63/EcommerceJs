@@ -11,10 +11,10 @@ function insertProduct(allProducts = []) {
         .map((item, index) => {
             return `<div class="product mb-4 d-flex">
             <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-3 mb-4 mb-md-0">
                     <img class='img-product w-100' src="${item.img}" alt="${item.name}" />
                 </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <div class="info text-md-left text-center">
                             <h3 class="name mb-3">${item.name}</h3>
                             <p class="desc mb-3">${item.desc}</p>
@@ -22,7 +22,7 @@ function insertProduct(allProducts = []) {
                                 <div class="col-md-8">
                                     <b>The Meal Is : <i>${item.meal}</i></b>
                                     <br>
-                                    <b>The quantity Is : <i>${item.quantity}</i></b>
+                                    <b>The Size Is : <i>${item.size}</i></b>
                                 </div>
                                 <div class="col-md-4">
                                 <div class="btns text-center text-md-right mt-3">
@@ -46,7 +46,6 @@ insertProduct();
 // Define Date
 const products = JSON.parse(localStorage.getItem("productsFavorite"));
 
-console.log(products);
 // Show Massage If You Don`t Have Products
 function massageShow() {
     if (products == null || products.length == 0) {

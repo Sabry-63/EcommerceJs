@@ -1,12 +1,13 @@
 // Products Elementes
 const parnetProducts = document.querySelector(".products");
 
-const products = JSON.parse(localStorage.getItem("allProducts"));
+let products = JSON.parse(localStorage.getItem("allProducts"));
 const productsFormData = productsDB;
 
 // Check Data In LocalStorage
 if (products == null) {
-    const AsetllProductsInDate = localStorage.setItem("allProducts", JSON.stringify(productsDB));
+    localStorage.setItem("allProducts", JSON.stringify(productsDB));
+    products = JSON.parse(localStorage.getItem("allProducts"));
 }
 
 // Insert The Products In Page
@@ -93,13 +94,11 @@ allProductsFavorite = JSON.parse(localStorage.getItem("productsFavorite")) ? JSO
 function addToFavorite(id) {
     if (getUser === null) {
         window.location = "register.html";
-        console.log("y");
     } else {
-        console.log("n");
-
+        console.log(products);
         // Select Items On Clicl
         const selectItem = products.find((item) => item.id === id);
-
+        console.log(selectItem);
         // Add Key To Elements
         selectItem.loved = true;
 
