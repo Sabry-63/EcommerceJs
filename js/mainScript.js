@@ -90,7 +90,7 @@ recognition.addEventListener("result", (e) => {
 const searchSpeech = document.querySelector(".shearch-speech");
 
 searchSpeech.addEventListener("click", () => {
-    recognition.addEventListener("end", recognition.start);
+    // recognition.addEventListener("end", recognition.start);
     recognition.start();
 });
 
