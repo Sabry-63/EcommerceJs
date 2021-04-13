@@ -15,21 +15,33 @@ let insertProduct;
             return `<div class="product mb-4 d-flex">
             ${item.isMe === "Y" ? "<img src='images/products/new.png' class='create'>" : ""}
             <div class="row">
-                <div class="col-md-3 mb-4 mb-md-0">
+                <div class="col-md-4 mb-4">
                     <img class='img-product w-100' src="${item.img}" alt="${item.name}" />
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div class="info text-md-left text-center">
                     <h3 class="h3 name mb-3">${item.name}</h3>
                     <p class="desc mb-3">${item.desc}</p>
                         <b>The Meal Is : <i>${item.meal}</i></b><br>
                         <b>The Size Is : <i>${item.size}</i></b>
                         <div class="btns text-center text-md-right mt-3">
-                            <button class="btn btn-md border fa fa-cart-plus mb-2" onclick="addToCart(${item.id})" id="addCart" title="Add To Card"></button>
-                            <button class="btn btn-md border fa fa-heart mx-2 mb-2 ${item.loved === true ? "active" : ""}" onclick="addToFavorite(${item.id})" title="Add To Favorite"></button>
-                            <button class="btn btn-md border fa fa-list-alt mb-2" onclick="saveProductInformation(${index})"  title="Show Ditales"></button>
-                            ${item.isMe === "Y" ? `<button class='btn btn-md border fa fa-refresh mx-2 mb-2' title='Update Product' onclick="updateProduct(${item.id})" ></button>` : ""}
-                            ${item.isMe === "Y" ? `<button class='btn btn-md border fa fa-trash mx-2  mb-2' title='Delete Product' onclick="deleteProduct(${item.id},${index})" ></button>` : ""}
+                            <button class="btn btn-md border fa fa-cart-plus" onclick="addToCart(${
+                                item.id
+                            })" id="addCart" title="Add To Card"></button>
+                            <button class="btn btn-md border fa fa-heart mx-2 ${
+                                item.loved === true ? "active" : ""
+                            }" onclick="addToFavorite(${item.id})" title="Add To Favorite"></button>
+                            <button class="btn btn-md border fa fa-list-alt" onclick="saveProductInformation(${index})"  title="Show Ditales"></button>
+                            ${
+                                item.isMe === "Y"
+                                    ? `<button class='btn btn-md border fa fa-refresh mx-2' title='Update Product' onclick="updateProduct(${item.id})" ></button>`
+                                    : ""
+                            }
+                            ${
+                                item.isMe === "Y"
+                                    ? `<button class='btn btn-md border fa fa-trash mx-2' title='Delete Product' onclick="deleteProduct(${item.id},${index})" ></button>`
+                                    : ""
+                            }
                         </div>
                     </div>
                 </div>

@@ -35,6 +35,10 @@ p {
     cursor: pointer;
     transition: all 0.4s;
     border: 1px solid transparent;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
 }
 .addBtn {
     color: white;
@@ -92,7 +96,7 @@ header .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 0 10px;
 }
 .user_list li i {
     font-size: 1.6em;
@@ -140,11 +144,6 @@ header .logo {
 
 .user_list .parent_cart .drobdown-cart li a {
     color: var(--mainColor);
-}
-@media (max-width: 676px) {
-    .user_list .parent_cart .fa-cart-plus {
-        padding: 0 200px;
-    }
 }
 /* 
     0- Home Start
@@ -228,6 +227,10 @@ header .logo {
     top: 9px;
     color: #ccc;
     transition: color 0.3s;
+    cursor: pointer;
+}
+.home-page .search i.hide {
+    display: none;
 }
 
 .home-page .search input:focus ~ i {

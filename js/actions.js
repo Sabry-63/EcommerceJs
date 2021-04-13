@@ -3,9 +3,11 @@ const cartList = document.querySelector(".list_product");
 const counter = document.querySelector(".counter_cart");
 
 // Add Products To Cart Page
-productAdded = JSON.parse(localStorage.getItem("productsCart")) ? JSON.parse(localStorage.getItem("productsCart")) : [];
+productAdded = JSON.parse(localStorage.getItem("productsCart"))
+    ? JSON.parse(localStorage.getItem("productsCart"))
+    : [];
 
-let countAuto;
+
 // Check Products Is Not Empty
 (function countAuto() {
     if (productAdded != null) {

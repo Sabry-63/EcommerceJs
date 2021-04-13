@@ -1,13 +1,12 @@
 // Products Elementes
 const parnetProducts = document.querySelector(".products");
 
-let products = JSON.parse(localStorage.getItem("allProducts"));
+const products = JSON.parse(localStorage.getItem("allProducts"));
 const productsFormData = productsDB;
 
 // Check Data In LocalStorage
 if (products == null) {
-    localStorage.setItem("allProducts", JSON.stringify(productsDB));
-    products = JSON.parse(localStorage.getItem("allProducts"));
+    const AsetllProductsInDate = localStorage.setItem("allProducts", JSON.stringify(productsDB));
 }
 
 // Insert The Products In Page
@@ -16,10 +15,10 @@ let insertProduct;
     // Loop In Products & Out Single Product
     let productUi = products
         .map((item, index) => {
-            return `<div class="product mb-4  d-flex">
+            return `<div class="product mb-4 d-flex">
             ${item.isMe === "Y" ? "<img src='images/products/new.png' class='create'>" : ""}
             <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-4 mb-4">
                     <img class='img-product w-100' src="${item.img}" alt="${item.name}" />
                 </div>
                 <div class="col-md-8">
@@ -74,6 +73,27 @@ function saveProductInformation(index) {
 // Search Of Input By Name
 const inputSeacrh = document.querySelector("#seacrh");
 
+//
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+recognition.lang = "en-US";
+recognition.addEventListener("result", (e) => {
+    const transcript = Array.from(e.results)
+        .map((result) => result[0])
+        .map((result) => result.transcript)
+        .join("");
+    inputSeacrh.value = transcript;
+    searchByName(transcript, products);
+});
+
+const searchSpeech = document.querySelector(".shearch-speech");
+
+searchSpeech.addEventListener("click", () => {
+    recognition.addEventListener("end", recognition.start);
+    recognition.start();
+});
+
 // Get What You Write
 inputSeacrh.addEventListener("keyup", (e) => {
     searchByName(e.target.value, products);
@@ -94,11 +114,13 @@ allProductsFavorite = JSON.parse(localStorage.getItem("productsFavorite")) ? JSO
 function addToFavorite(id) {
     if (getUser === null) {
         window.location = "register.html";
+        console.log("y");
     } else {
-        console.log(products);
+        console.log("n");
+
         // Select Items On Clicl
         const selectItem = products.find((item) => item.id === id);
-        console.log(selectItem);
+
         // Add Key To Elements
         selectItem.loved = true;
 
